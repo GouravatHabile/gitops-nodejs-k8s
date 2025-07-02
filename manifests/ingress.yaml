@@ -12,7 +12,7 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: nodejs-service
+      name: gitops-nodejs-service
       port:
         number: 80
 
