@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nodejs-ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:941275879372:certificate/554d3a90-523f-4be3-9687-87742a09dfd3  # <-- replace with yours
+    alb.ingress.kubernetes.io/group.name: "apps"
+spec:
+  defaultBackend:
+    service:
+      name: nodejs-service
+      port:
+        number: 80
+
