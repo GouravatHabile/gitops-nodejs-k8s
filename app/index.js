@@ -3,7 +3,7 @@ const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
   res.writeHead(200);
-  res.end("Hello from Node.js on Kubernetes via Argo CD!");
+  res.end("Hello from Node.js on Kubernetes via Argo CD for habilelabs");
 });
 
 server.listen(port, () => {
